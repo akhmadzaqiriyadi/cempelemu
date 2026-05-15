@@ -52,3 +52,12 @@
 .animate-fade-in-up-delay-1 { animation-delay: 0.15s; }
 .animate-fade-in-up-delay-2 { animation-delay: 0.30s; }
 .animate-fade-in-up-delay-3 { animation-delay: 0.45s; }
+
+@keyframes arrowLoop {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+.animate-arrow-loop {
+  animation: arrowLoop 1.2s ease-in-out infinite;
+}

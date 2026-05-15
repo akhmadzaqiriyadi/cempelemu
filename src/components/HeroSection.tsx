@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight,
   CalendarDays,
@@ -11,15 +12,15 @@ import {
 
 const heroSlides = [
   {
-    src: "/hero/IMG_1501.jpg",
+    src: "/hero/IMG_1501.webp",
     alt: "Sate kambing muda di atas bara api",
   },
   {
-    src: "/hero/IMG_1502.jpg",
+    src: "/hero/IMG_1502.webp",
     alt: "Tampilan hidangan sate kambing muda siap saji",
   },
   {
-    src: "/hero/IMG_1504.jpg",
+    src: "/hero/IMG_1504.webp",
     alt: "Suasana penyajian sate kambing muda khas Tegal",
   },
 ];
@@ -82,7 +83,7 @@ export default function HeroSection() {
         ))}
         <div className="absolute inset-0 bg-linear-to-r from-black/85 via-black/65 to-black/30" />
         <div className="absolute inset-0 bg-linear-to-t from-black/75 via-transparent to-black/20" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,215,0,0.18),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(227,6,19,0.22),transparent_32%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,215,0,0.18),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(227,6,19,0.16),transparent_36%)]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
@@ -105,24 +106,24 @@ export default function HeroSection() {
           </p>
 
           <div className="mt-8 grid grid-cols-2 gap-3 animate-fade-in-up animate-fade-in-up-delay-3 lg:flex lg:justify-center">
-            <a
+            <Link
               href="#menu"
               id="hero-cta-menu"
-              className="inline-flex w-full items-center justify-center gap-1.5 bg-primary text-text-dark font-bold px-3 py-2 rounded-xl shadow-lg hover:bg-primary-dark hover:shadow-xl transition-all duration-200 hover:-translate-y-1 text-[11px] sm:text-base lg:w-auto lg:text-sm"
+              className="inline-flex w-full items-center justify-center gap-2 bg-primary text-text-dark font-bold px-4 py-2.5 rounded-xl shadow-lg hover:bg-primary-dark hover:shadow-xl transition-all duration-200 hover:-translate-y-1 text-[11px] sm:text-base lg:w-auto lg:px-8 lg:py-3 lg:text-sm"
             >
               Lihat Menu
-              <ArrowRight className="w-3 h-3 lg:w-3 lg:h-3" />
-            </a>
-            <a
+              <ArrowRight className="w-3 h-3 lg:w-4 lg:h-4 animate-arrow-loop" />
+            </Link>
+            <Link
               href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20reservasi%20tempat"
               target="_blank"
               rel="noopener noreferrer"
               id="hero-cta-reservasi"
-              className="inline-flex w-full items-center justify-center gap-1.5 border-2 border-white text-white font-bold px-3 py-2 rounded-xl hover:bg-white hover:text-text-dark transition-all duration-200 hover:-translate-y-1 text-[11px] sm:text-base backdrop-blur-sm lg:w-auto lg:text-sm"
+              className="inline-flex w-full items-center justify-center gap-2 border-2 border-white text-white font-bold px-4 py-2.5 rounded-xl hover:bg-white hover:text-text-dark transition-all duration-200 hover:-translate-y-1 text-[11px] sm:text-base backdrop-blur-sm lg:w-auto lg:px-8 lg:py-3 lg:text-sm"
             >
-              <CalendarDays className="w-3 h-3 lg:w-3 lg:h-3" />
+              <CalendarDays className="w-3 h-3 lg:w-4 lg:h-4" />
               Reservasi Tempat
-            </a>
+            </Link>
           </div>
 
           <div className="mt-12 mx-auto grid w-full max-w-3xl grid-cols-3 gap-3 sm:gap-6 animate-fade-in-up animate-fade-in-up-delay-3">
