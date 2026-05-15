@@ -1,17 +1,71 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useRef, useState, useEffect, useLayoutEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { gsap } from "gsap";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const mobileOverlayRef = useRef<HTMLDivElement | null>(null);
+  const mobilePanelRef = useRef<HTMLDivElement | null>(null);
+  const mobileTlRef = useRef<gsap.core.Timeline | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useLayoutEffect(() => {
+    const overlay = mobileOverlayRef.current;
+    const panel = mobilePanelRef.current;
+    if (!overlay || !panel) return;
+
+    gsap.set(overlay, {
+      display: "none",
+      opacity: 0,
+      pointerEvents: "none",
+    });
+    gsap.set(panel, {
+      display: "none",
+      opacity: 0,
+      y: -10,
+    });
+
+    const tl = gsap
+      .timeline({ paused: true })
+      .set(overlay, { display: "block", pointerEvents: "auto" }, 0)
+      .set(panel, { display: "flex" }, 0)
+      .to(overlay, { opacity: 1, duration: 0.18, ease: "power2.out" }, 0)
+      .to(
+        panel,
+        { opacity: 1, y: 0, duration: 0.26, ease: "power3.out" },
+        0
+      );
+
+    tl.eventCallback("onReverseComplete", () => {
+      gsap.set(overlay, { display: "none", pointerEvents: "none", opacity: 0 });
+      gsap.set(panel, { display: "none", opacity: 0, y: -10 });
+    });
+
+    mobileTlRef.current = tl;
+    return () => {
+      tl.kill();
+      mobileTlRef.current = null;
+    };
+  }, []);
+
+  useEffect(() => {
+    const tl = mobileTlRef.current;
+    if (!tl) return;
+
+    if (menuOpen) {
+      tl.play(0);
+    } else {
+      tl.reverse();
+    }
+  }, [menuOpen]);
 
   const links = [
     { label: "Tentang", href: "#tentang" },
@@ -87,6 +141,8 @@ export default function Navbar() {
           className="md:hidden p-2 rounded-lg"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          aria-controls="navbar-mobile-menu"
         >
           <span
             className={`block w-6 h-0.5 mb-1.5 transition-all ${
@@ -107,8 +163,19 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white shadow-xl border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
+      <div className="md:hidden">
+        <div
+          ref={mobileOverlayRef}
+          className="fixed inset-0 z-40 bg-transparent"
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
+        <div
+          id="navbar-mobile-menu"
+          ref={mobilePanelRef}
+          className="absolute left-0 right-0 top-full z-50 bg-white shadow-xl border-t border-gray-100 px-6 py-4 flex flex-col gap-4"
+          onClick={(e) => e.stopPropagation()}
+        >
           {links.map((l) => (
             <Link
               key={l.href}
@@ -124,11 +191,12 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary text-text-dark font-bold text-sm px-5 py-3 rounded-full text-center shadow-md"
+            onClick={() => setMenuOpen(false)}
           >
             Pesan Sekarang
           </Link>
         </div>
-      )}
+      </div>
     </header>
   );
 }
