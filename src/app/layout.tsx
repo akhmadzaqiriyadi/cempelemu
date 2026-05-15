@@ -13,6 +13,13 @@ export const metadata: Metadata = {
   title: "Sate Kambing Muda Cempe Lemu | Spesialis Sate Kambing Muda Khas Tegal",
   description:
     "Nikmati sajian sate kambing muda pilihan dari Cempe Lemu — lembut, juicy, dan otentik khas Tegal. Tersedia di 3 cabang: Tegal, Adiwerna, dan Exit Tol Slawi. Pesan sekarang!",
+  icons: {
+    icon: [
+      { url: "/logocempelemu.webp", type: "image/webp" },
+      { url: "/favicon.ico" },
+    ],
+    apple: [{ url: "/logocempelemu.webp", type: "image/webp" }],
+  },
   keywords: [
     "sate kambing muda",
     "cempe lemu",
