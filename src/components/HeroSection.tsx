@@ -108,19 +108,19 @@ export default function HeroSection() {
             <a
               href="#menu"
               id="hero-cta-menu"
-              className="inline-flex w-full items-center justify-center gap-2 bg-primary text-text-dark font-bold px-5 py-3.5 rounded-full shadow-lg hover:bg-primary-dark hover:shadow-xl transition-all duration-200 hover:-translate-y-1 text-sm sm:text-base lg:w-auto lg:px-8"
+              className="inline-flex w-full items-center justify-center gap-1.5 bg-primary text-text-dark font-bold px-3.5 py-2.5 rounded-full shadow-lg hover:bg-primary-dark hover:shadow-xl transition-all duration-200 hover:-translate-y-1 text-[11px] sm:text-base lg:w-auto lg:px-8 lg:py-3.5 lg:text-sm"
             >
               Lihat Menu
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
             </a>
             <a
               href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20reservasi%20tempat"
               target="_blank"
               rel="noopener noreferrer"
               id="hero-cta-reservasi"
-              className="inline-flex w-full items-center justify-center gap-2 border-2 border-white text-white font-bold px-5 py-3.5 rounded-full hover:bg-white hover:text-text-dark transition-all duration-200 hover:-translate-y-1 text-sm sm:text-base backdrop-blur-sm lg:w-auto lg:px-8"
+              className="inline-flex w-full items-center justify-center gap-1.5 border-2 border-white text-white font-bold px-3.5 py-2.5 rounded-full hover:bg-white hover:text-text-dark transition-all duration-200 hover:-translate-y-1 text-[11px] sm:text-base backdrop-blur-sm lg:w-auto lg:px-8 lg:py-3.5 lg:text-sm"
             >
-              <CalendarDays className="w-4 h-4" />
+              <CalendarDays className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
               Reservasi Tempat
             </a>
           </div>
