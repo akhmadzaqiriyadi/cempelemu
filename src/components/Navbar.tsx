@@ -36,20 +36,21 @@ export default function Navbar() {
           <Image
             src="/logocempelemu.webp"
             alt="Logo Cempe Lemu"
-            width={160}
+            width={42}
             height={56}
             priority
             className="h-12 md:h-14 w-auto object-contain transition-all duration-300"
+            style={{ height: "auto" }}
           />
           {/* Text beside logo */}
           <div className="flex flex-col leading-tight">
             <span className={`text-[12px] font-bold tracking-wide transition-colors duration-300 ${
-              scrolled ? "text-[#1F2937]/70" : "text-white/80"
+              scrolled ? "text-text-dark/70" : "text-white/80"
             }`}>
               Sate Kambing muda
             </span>
             <span className={`text-[20px] font-extrabold tracking-tight transition-colors duration-300 ${
-              scrolled ? "text-[#1F2937]" : "text-white"
+              scrolled ? "text-text-dark" : "text-white"
             }`}>
               Cempe Lemu
             </span>
@@ -62,8 +63,8 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className={`font-semibold text-sm transition-colors hover:text-[#E30613] ${
-                scrolled ? "text-[#1F2937]" : "text-white"
+              className={`font-semibold text-sm transition-colors hover:text-secondary ${
+                scrolled ? "text-text-dark" : "text-white"
               }`}
             >
               {l.label}
@@ -74,7 +75,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             id="navbar-cta"
-            className="bg-[#FFD700] text-[#1F2937] font-bold text-sm px-5 py-2.5 rounded-full shadow-md hover:bg-[#e6c200] hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5"
+            className="bg-primary text-text-dark font-bold text-sm px-5 py-2.5 rounded-full shadow-md hover:bg-primary-dark hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5"
           >
             Pesan Sekarang
           </Link>
@@ -89,17 +90,17 @@ export default function Navbar() {
         >
           <span
             className={`block w-6 h-0.5 mb-1.5 transition-all ${
-              scrolled ? "bg-[#1F2937]" : "bg-white"
+              scrolled ? "bg-text-dark" : "bg-white"
             } ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
           />
           <span
             className={`block w-6 h-0.5 mb-1.5 transition-all ${
-              scrolled ? "bg-[#1F2937]" : "bg-white"
+              scrolled ? "bg-text-dark" : "bg-white"
             } ${menuOpen ? "opacity-0" : ""}`}
           />
           <span
             className={`block w-6 h-0.5 transition-all ${
-              scrolled ? "bg-[#1F2937]" : "bg-white"
+              scrolled ? "bg-text-dark" : "bg-white"
             } ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
           />
         </button>
@@ -113,7 +114,7 @@ export default function Navbar() {
               key={l.href}
               href={l.href}
               onClick={() => setMenuOpen(false)}
-              className="font-semibold text-[#1F2937] hover:text-[#E30613] transition-colors py-1"
+              className="font-semibold text-text-dark hover:text-secondary transition-colors py-1"
             >
               {l.label}
             </Link>
@@ -122,7 +123,7 @@ export default function Navbar() {
             href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20pesan%20sate%20kambing%20muda"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#FFD700] text-[#1F2937] font-bold text-sm px-5 py-3 rounded-full text-center shadow-md"
+            className="bg-primary text-text-dark font-bold text-sm px-5 py-3 rounded-full text-center shadow-md"
           >
             Pesan Sekarang
           </Link>

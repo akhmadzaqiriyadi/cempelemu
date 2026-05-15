@@ -33,18 +33,18 @@ const menuItems = [
 
 export default function MenuSection() {
   return (
-    <section id="menu" className="py-20 md:py-28 bg-[#FFFBF0]">
+    <section id="menu" className="py-20 md:py-28 bg-bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="inline-block text-[#E30613] font-bold text-xs tracking-widest uppercase mb-3 bg-[#E30613]/10 px-3 py-1 rounded-full">
+          <span className="inline-block text-secondary font-bold text-xs tracking-widest uppercase mb-3 bg-secondary/10 px-3 py-1 rounded-full">
             Menu Unggulan
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1F2937]">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-text-dark">
             Sajian{" "}
-            <span className="text-[#E30613]">Signature</span> Kami
+            <span className="text-secondary">Signature</span> Kami
           </h2>
-          <p className="mt-3 text-[#1F2937]/60 max-w-xl mx-auto text-sm sm:text-base">
+          <p className="mt-3 text-text-dark/60 max-w-xl mx-auto text-sm sm:text-base">
             Setiap hidangan diracik dengan cinta dan resep turun-temurun khas Tegal.
           </p>
         </div>
@@ -58,15 +58,16 @@ export default function MenuSection() {
               className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden group flex flex-col"
             >
               {/* Image */}
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-4/3 overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {item.badge && (
-                  <span className="absolute top-3 left-3 bg-[#E30613] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                  <span className="absolute top-3 left-3 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
                     ⭐ {item.badge}
                   </span>
                 )}
@@ -74,10 +75,10 @@ export default function MenuSection() {
 
               {/* Content */}
               <div className="p-5 flex flex-col flex-1">
-                <h3 className="font-bold text-[#1F2937] text-base leading-snug mb-2">
+                <h3 className="font-bold text-text-dark text-base leading-snug mb-2">
                   {item.title}
                 </h3>
-                <p className="text-[#1F2937]/60 text-xs leading-relaxed flex-1">
+                <p className="text-text-dark/60 text-xs leading-relaxed flex-1">
                   {item.desc}
                 </p>
                 <a
@@ -85,7 +86,7 @@ export default function MenuSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   id={`pesan-btn-${item.id}`}
-                  className="mt-4 w-full bg-[#FFD700] text-[#1F2937] font-bold text-sm py-2.5 rounded-xl text-center hover:bg-[#e6c200] transition-colors duration-200"
+                  className="mt-4 w-full bg-primary text-text-dark font-bold text-sm py-2.5 rounded-xl text-center hover:bg-primary-dark transition-colors duration-200"
                 >
                   Pesan
                 </a>
@@ -101,7 +102,7 @@ export default function MenuSection() {
             target="_blank"
             rel="noopener noreferrer"
             id="menu-view-all"
-            className="inline-flex items-center gap-2 border-2 border-[#FFD700] text-[#1F2937] font-bold px-8 py-3 rounded-full hover:bg-[#FFD700] transition-colors duration-200 text-sm"
+            className="inline-flex items-center gap-2 border-2 border-primary text-text-dark font-bold px-8 py-3 rounded-full hover:bg-primary transition-colors duration-200 text-sm"
           >
             Lihat Menu Lengkap
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
