@@ -1,26 +1,54 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: #FFD700;
+  --color-primary-dark: #e6c200;
+  --color-secondary: #E30613;
+  --color-bg-cream: #FFFBF0;
+  --color-text-dark: #1F2937;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #FFFBF0;
+    color: #1F2937;
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-shadow-lg {
+    text-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  }
+  .text-shadow-sm {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
 }
+
+/* Floating WhatsApp pulse animation */
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  50% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+}
+
+.wa-float {
+  animation: wa-pulse 2s infinite;
+}
+
+/* Subtle fade-in-up */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.animate-fade-in-up-delay-1 { animation-delay: 0.15s; }
+.animate-fade-in-up-delay-2 { animation-delay: 0.30s; }
+.animate-fade-in-up-delay-3 { animation-delay: 0.45s; }
