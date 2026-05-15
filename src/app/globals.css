@@ -61,3 +61,45 @@
 .animate-arrow-loop {
   animation: arrowLoop 1.2s ease-in-out infinite;
 }
+
+/* MapLibre popup styling (scoped to BranchMap) */
+.branch-map .maplibregl-popup-content {
+  color: #1F2937;
+  border-radius: 16px;
+  padding: 14px 40px 14px 14px;
+}
+
+.branch-map .maplibregl-popup-close-button {
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: #1F2937;
+  padding: 0;
+  border: 0;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  position: relative;
+  opacity: 0.95;
+  z-index: 10;
+}
+
+.branch-map .maplibregl-popup-close-button::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFD700' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M18 6 6 18'/%3E%3Cpath d='M6 6 18 18'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 14px;
+}
+
+.branch-map .maplibregl-popup-close-button:hover {
+  opacity: 1;
+}

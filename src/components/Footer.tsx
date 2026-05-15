@@ -1,4 +1,5 @@
 import { Clock, Heart, MapPin, Phone, Utensils } from "lucide-react";
+import BranchMap from "./BranchMap";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -129,6 +130,22 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Map */}
+        <div className="max-w-7xl mx-auto mt-12">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-[#FFD700]">
+              <MapPin className="h-5 w-5" aria-hidden="true" />
+            </span>
+            <h4 className="font-bold text-white text-sm uppercase tracking-wider">
+              Lokasi Cabang di Peta
+            </h4>
+          </div>
+          <p className="text-white/60 text-sm mb-5 max-w-3xl">
+            Lihat semua cabang kami sekaligus — tiga pin akan tampil dalam satu peta.
+          </p>
+          <BranchMap />
         </div>
 
         {/* Bottom bar */}
