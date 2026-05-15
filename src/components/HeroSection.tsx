@@ -87,7 +87,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
         <div className="max-w-2xl lg:mx-auto lg:text-center">
-          <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/50 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 border border-primary/50 backdrop-blur-sm rounded-xl px-4 py-1.5 mb-6 animate-fade-in-up">
             <span className="text-primary font-semibold text-xs tracking-widest uppercase">
               Spesialis Kambing Muda Khas Tegal
             </span>
@@ -108,19 +108,19 @@ export default function HeroSection() {
             <a
               href="#menu"
               id="hero-cta-menu"
-              className="inline-flex w-full items-center justify-center gap-1.5 bg-primary text-text-dark font-bold px-3.5 py-2.5 rounded-full shadow-lg hover:bg-primary-dark hover:shadow-xl transition-all duration-200 hover:-translate-y-1 text-[11px] sm:text-base lg:w-auto lg:px-8 lg:py-3.5 lg:text-sm"
+              className="inline-flex w-full items-center justify-center gap-1.5 bg-primary text-text-dark font-bold px-3 py-2 rounded-xl shadow-lg hover:bg-primary-dark hover:shadow-xl transition-all duration-200 hover:-translate-y-1 text-[11px] sm:text-base lg:w-auto lg:text-sm"
             >
               Lihat Menu
-              <ArrowRight className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
+              <ArrowRight className="w-3 h-3 lg:w-3 lg:h-3" />
             </a>
             <a
               href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20reservasi%20tempat"
               target="_blank"
               rel="noopener noreferrer"
               id="hero-cta-reservasi"
-              className="inline-flex w-full items-center justify-center gap-1.5 border-2 border-white text-white font-bold px-3.5 py-2.5 rounded-full hover:bg-white hover:text-text-dark transition-all duration-200 hover:-translate-y-1 text-[11px] sm:text-base backdrop-blur-sm lg:w-auto lg:px-8 lg:py-3.5 lg:text-sm"
+              className="inline-flex w-full items-center justify-center gap-1.5 border-2 border-white text-white font-bold px-3 py-2 rounded-xl hover:bg-white hover:text-text-dark transition-all duration-200 hover:-translate-y-1 text-[11px] sm:text-base backdrop-blur-sm lg:w-auto lg:text-sm"
             >
-              <CalendarDays className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
+              <CalendarDays className="w-3 h-3 lg:w-3 lg:h-3" />
               Reservasi Tempat
             </a>
           </div>
