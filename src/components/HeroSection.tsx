@@ -104,11 +104,11 @@ export default function HeroSection() {
             Favorit para pejabat dan seniman.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4 animate-fade-in-up animate-fade-in-up-delay-3 lg:justify-center">
+          <div className="mt-8 grid grid-cols-2 gap-3 animate-fade-in-up animate-fade-in-up-delay-3 lg:flex lg:justify-center">
             <a
               href="#menu"
               id="hero-cta-menu"
-              className="inline-flex items-center gap-2 bg-primary text-text-dark font-bold px-8 py-3.5 rounded-full shadow-lg hover:bg-primary-dark hover:shadow-xl transition-all duration-200 hover:-translate-y-1 text-sm sm:text-base"
+              className="inline-flex w-full items-center justify-center gap-2 bg-primary text-text-dark font-bold px-5 py-3.5 rounded-full shadow-lg hover:bg-primary-dark hover:shadow-xl transition-all duration-200 hover:-translate-y-1 text-sm sm:text-base lg:w-auto lg:px-8"
             >
               Lihat Menu
               <ArrowRight className="w-4 h-4" />
@@ -118,7 +118,7 @@ export default function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
               id="hero-cta-reservasi"
-              className="inline-flex items-center gap-2 border-2 border-white text-white font-bold px-8 py-3.5 rounded-full hover:bg-white hover:text-text-dark transition-all duration-200 hover:-translate-y-1 text-sm sm:text-base backdrop-blur-sm"
+              className="inline-flex w-full items-center justify-center gap-2 border-2 border-white text-white font-bold px-5 py-3.5 rounded-full hover:bg-white hover:text-text-dark transition-all duration-200 hover:-translate-y-1 text-sm sm:text-base backdrop-blur-sm lg:w-auto lg:px-8"
             >
               <CalendarDays className="w-4 h-4" />
               Reservasi Tempat
