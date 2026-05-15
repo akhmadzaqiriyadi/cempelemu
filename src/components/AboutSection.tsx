@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Beef, Crown, Flame, Smartphone } from "lucide-react";
 
 export default function AboutSection() {
   return (
@@ -9,8 +10,8 @@ export default function AboutSection() {
           <div className="relative group">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
               <Image
-                src="/restaurant-interior.png"
-                alt="Suasana restoran Cempe Lemu yang ramai dan nyaman"
+                src="/about/2021-05-31.webp"
+                alt="Suasana restoran Cempe Lemu"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -50,16 +51,18 @@ export default function AboutSection() {
             {/* Highlights */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { icon: "🔥", title: "Dibakar dengan Arang", desc: "Teknik tradisional untuk cita rasa terbaik" },
-                { icon: "🐐", title: "Kambing Muda Pilihan", desc: "Dipilih teliti agar lembut & juicy" },
-                { icon: "👑", title: "Favorit Pejabat", desc: "Dipercaya kalangan pejabat & seniman" },
-                { icon: "📱", title: "Pesan Online", desc: "Mudah dipesan melalui WhatsApp" },
+                { Icon: Flame, title: "Dibakar dengan Arang", desc: "Teknik tradisional untuk cita rasa terbaik" },
+                { Icon: Beef, title: "Kambing Muda Pilihan", desc: "Dipilih teliti agar lembut & juicy" },
+                { Icon: Crown, title: "Favorit Pejabat", desc: "Dipercaya kalangan pejabat & seniman" },
+                { Icon: Smartphone, title: "Pesan Online", desc: "Mudah dipesan melalui WhatsApp" },
               ].map((item) => (
                 <div
                   key={item.title}
                   className="flex items-start gap-3 bg-[#FFFBF0] rounded-xl p-4 border border-[#FFD700]/20"
                 >
-                  <span className="text-2xl">{item.icon}</span>
+                  <span className="mt-0.5 text-[#E30613]">
+                    <item.Icon className="h-6 w-6" aria-hidden="true" />
+                  </span>
                   <div>
                     <div className="font-bold text-sm text-[#1F2937]">{item.title}</div>
                     <div className="text-xs text-[#1F2937]/60 mt-0.5">{item.desc}</div>

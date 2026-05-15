@@ -1,3 +1,5 @@
+import { Clock, Heart, MapPin, Phone, Utensils } from "lucide-react";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -7,7 +9,10 @@ export default function Footer() {
       <div className="bg-[#FFD700] py-10 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1F2937] mb-3">
-            Siap Memesan? Hubungi Kami Sekarang! 🍢
+            <span className="inline-flex items-center gap-2">
+              Siap Memesan? Hubungi Kami Sekarang!
+              <Utensils className="h-6 w-6" aria-hidden="true" />
+            </span>
           </h2>
           <p className="text-[#1F2937]/70 text-sm mb-6">
             Pesan via WhatsApp atau kunjungi cabang terdekat kami.
@@ -93,7 +98,9 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <span className="text-[#FFD700] mt-0.5">📞</span>
+                <span className="text-[#FFD700] mt-0.5">
+                  <Phone className="h-5 w-5" aria-hidden="true" />
+                </span>
                 <a
                   href="https://wa.me/6281234567890"
                   target="_blank"
@@ -105,13 +112,17 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#FFD700] mt-0.5">🕐</span>
+                <span className="text-[#FFD700] mt-0.5">
+                  <Clock className="h-5 w-5" aria-hidden="true" />
+                </span>
                 <span className="text-white/60 text-sm">
                   Senin–Minggu: 10:00 – 22:00 WIB
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#FFD700] mt-0.5">📍</span>
+                <span className="text-[#FFD700] mt-0.5">
+                  <MapPin className="h-5 w-5" aria-hidden="true" />
+                </span>
                 <span className="text-white/60 text-sm">
                   3 Cabang: Tegal, Adiwerna & Slawi
                 </span>
@@ -126,7 +137,11 @@ export default function Footer() {
             © {currentYear} Sate Kambing Muda Cempe Lemu. All rights reserved.
           </p>
           <p className="text-white/30 text-xs">
-            Dibuat dengan ❤️ untuk pelanggan setia kami
+            <span className="inline-flex items-center gap-1.5">
+              Dibuat dengan
+              <Heart className="h-4 w-4 text-[#FFD700]" aria-hidden="true" />
+              untuk pelanggan setia kami
+            </span>
           </p>
         </div>
       </div>

@@ -1,3 +1,5 @@
+import { Clock } from "lucide-react";
+
 const branches = [
   {
     id: "cabang-tegal",
@@ -77,7 +79,8 @@ export default function LocationSection() {
               {/* Special badge */}
               {branch.badge && (
                 <span className="inline-flex items-center gap-1.5 bg-[#E30613] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 w-fit">
-                  🕐 {branch.badge}
+                  <Clock className="h-4 w-4" aria-hidden="true" />
+                  {branch.badge}
                 </span>
               )}
 

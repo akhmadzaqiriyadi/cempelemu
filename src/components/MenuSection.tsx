@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Star } from "lucide-react";
 
 const menuItems = [
   {
@@ -68,7 +69,10 @@ export default function MenuSection() {
                 />
                 {item.badge && (
                   <span className="absolute top-3 left-3 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                    ⭐ {item.badge}
+                    <span className="inline-flex items-center gap-1.5">
+                      <Star className="h-3.5 w-3.5" aria-hidden="true" />
+                      {item.badge}
+                    </span>
                   </span>
                 )}
               </div>
